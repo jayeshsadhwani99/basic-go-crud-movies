@@ -73,7 +73,7 @@ func updateMovie(w http.ResponseWriter, r *http.Request) {
 			_ = json.NewDecoder(r.Body).Decode(&movie)
 			movie.ID = params["id"]
 			movies = append(movies, movie)
-			return
+			break
 		}
 	}
 	json.NewEncoder(w).Encode(movies)
